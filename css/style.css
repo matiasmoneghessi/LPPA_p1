@@ -1,11 +1,12 @@
 body{
+display: flex;
+justify-content: center;
+align-items: center;
 margin: 0;
 padding: 0;
 font-family: 'Roboto Slab', serif;
 background-color: #e2dedb;
-
 }
-
 .form{
 display: flex;
 flex-direction: column;
@@ -18,65 +19,89 @@ box-shadow: 10px 10px 5px 0px rgba(0,0,0,0.75);
 background-color: #001f3f;
 color: #7FDBFF;
 }
-
 .form > div{
-padding: 20px 0;
+padding: 20px 0px 10px 0px;
 border-bottom: 1px solid #ccc;
 }
-
-.form input[type="radio"] + label,
-.form input[type="checkbox"] + label {
-display: block;
-cursor: pointer;
-position: relative;
-font-size: 1em;
-margin: 0.2em;
-padding: 0.2em;
+.error{
+color: red;
+font-size: small;
+text-align: justify;
+}
+.labeltitle{
+display: flex;
+}
+#sex, #interest {
+color:#7FDBFF ; 
 }
 .form input[type="radio"] ,
 .form input[type="checkbox"]{
 display: none;
 }
+.checkbox, .radio{
+display: flex;
+flex-direction: column;
+vertical-align: bottom;
+}
 .form input[type="radio"] + label::before,
 .form input[type="checkbox"] + label::before{
+vertical-align: bottom;
 content: "\2714";
 background: none;
 border: 2px solid #000;
 border-radius:50%;
-display: inline-block;
-width: 1em;
-height: 1em;
-padding-left:0.2em ;
+display: flex;
+width: 0.7em;
+height: 0.7em;
+padding-left:0.2em;
 padding-bottom: 0.3em;
 margin-right: 0.2em;
-vertical-align: bottom;
 color: transparent;
 transition: .2s;
 }
 .form input[type="checkbox"] + label::before{
-border-radius: 3px;
+border-radius: 2px;
 }
 .form input[type="radio"]:checked + label::before,
 .form input[type="checkbox"]:checked + label::before{
+display: flex;
+justify-content: center;
+align-items: center;
 background-color: #7FDBFF;
 border-color: #7FDBFF;
 color: white;
 }
 .form .radio label,
 .form .checkbox label{
-color: white;
-padding: 5px 15px 5px 51px;
-display: inline-block;
+display: flex;
 position: relative;
+padding: 2px 0px 2px 0px;
+color: white;
 }
-.area textarea {
+.area {
 display: flex;
 font-family: 'Roboto Slab', serif;
 border-radius: 6px;
 }
 .button {
 font-family: 'Roboto Slab', serif;
-border-radius: 6px;
+width: 100%;
+height: 4vh;
+border-radius: 10px;
+border-color: white;
 color: #001f3f;
 background-color: #7FDBFF;
+}
+.footer{
+margin: 20px 0px 0px 0px;
+}
+@media (max-width:600px){
+.form{
+width: 70%;
+}
+}
+@media (max-width:450px){
+.form{
+width: 50%;
+}
 }

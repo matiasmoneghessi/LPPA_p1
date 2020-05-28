@@ -11,67 +11,67 @@
     </head>
     <body>
         <div class="container">
-            <div class="form">
+            <form class="form" autocomplete="off">
                 <h1 class="title">COMPLETE THE FORM</h1>
                 <div>
                     <label for="name">Name:</label>
                     <input id="name" placeholder="Enter your name" type="text">
-                    <p id="errorname"></p>
+                    <p id="errorname" class="error"></p>
                 </div>
                 <div>
                     <label for="surname">Surname:</label>
                     <input id="surname" placeholder="Enter your surname" type="text">
+                    <p id="errorsurname" class="error"></p>
                 </div>
                 <div>
                     <label for="email">Email:</label>
                     <input id="email" placeholder="example@hotmail.com" type="text">
+                    <p id="erroremail" class="error"></p>
                 </div>
                 <div>
                     <label for="age">Age:</label>
                     <input id="age" placeholder="Enter your age" type="text">
+                    <p id="errorage" class="error"></p>
                 </div>
                 <div class="radio">
-                    <h4>Sex</h4>
-
+                    <label id="sex" class="labeltitle">Sex:</label>
                     <input type="radio" id="male" name="gender" value="male">
-                    <label for="male">Male</label>
-
+                    <label for="male">&nbspMale</label>
                     <input type="radio" id="female" name="gender" value="female">
-                    <label for="female">Female</label>
-
+                    <label for="female">&nbspFemale</label>
                     <input type="radio" id="other" name="gender" value="other">
-                    <label for="other">Other</label>
+                    <label for="other">&nbspOther</label>
+                    <p id="errorsex" class="error"></p>
                 </div>
                 <div class="checkbox">
-                    <h4 class="checkbox">Interest in:</h4>
-
+                    <label id="interest" class="labeltitle">Interest in:</label>
                     <input type="checkbox" class="custom-control-input" id="music" name="theme" value="music">
-                    <label for="music">Music</label>
-
+                    <label for="music">&nbspMusic</label>
                     <input type="checkbox" id="sports" name="theme" value="sports">
-                    <label for="sports">Sports</label>
-
+                    <label for="sports">&nbspSports</label>
                     <input type="checkbox" id="games" name="theme" value="games">
-                    <label for="games">Games</label>
-
+                    <label for="games">&nbspGames</label>
                     <input type="checkbox" id="tech" name="theme" value="tech">
-                    <label for="tech">Technology</label>
+                    <label for="tech">&nbspTechnology</label>
+                    <p id="errorinterest" class="error"></p>
                 </div>
                 <div>
-                    <h4 class="countries">Select a country:</h4>
-                    <select name="contries" id="contries">
+                    <label for="countries">Select a country:</label>
+                    <select name="contries" id="dropdown">
+                        <option id="select" value="select">Select your contry</option>
                         <option value="arg">Argentina</option>
                         <option value="chi">Chile</option>
                         <option value="bra">Brasil</option>
                         <option value="uru">Uruguay</option>
                     </select>
+                    <p id="errorselect" class="error"></p>
                 </div>
-                <div class="area">
-                    <h4>Send a message!</h4>
-                    <textarea name="textarea" rows="10" cols="47">Write something here...</textarea>
-                </div>
-                <button id="send" class="button" type="button">Send!</button>
-            </div>
+                <label for="send" class="footer">Send a message!</label>
+                <textarea id="area" class="area footer" name="textarea" placeholder="Write something here..." rows="10"
+                    cols="47"></textarea>
+                <p id="errorarea" class="error"></p>
+                <button id="send" class="button footer" type="button">Submit!</button>
+            </form>
         </div>
     </body>
 </html>
