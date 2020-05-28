@@ -11,6 +11,7 @@ function validateName() {
         console.log('Name: ' + userName.value)
     }
 }
+//validate surname
 function validateSurname() {
     if (userSurname.value.length < 3 && userSurname.value.length > 0) {
         console.log('Surname too short')
@@ -23,6 +24,7 @@ function validateSurname() {
         console.log('Surename: ' + userSurname.value)
     }
 }
+//validate email
 function validateEmail() {
     if (reg.test(userEmail.value) == false) {
         console.log('Wrong email')
@@ -33,6 +35,7 @@ function validateEmail() {
         console.log('Email: ' + userEmail.value)
     }
 }
+//validate age
 function validateAge() {
     if (userAge.value < 1 || userAge.value > 99) {
         console.log('The age must be a number between 1 and 100')
@@ -47,6 +50,7 @@ function validateAge() {
         console.log('Age: ' + userAge.value)
     }
 }
+//validate sex
 function validateSex() {
     if (male.checked === false && female.checked === false && other.checked === false) {
         errorSex.innerHTML = 'Please select a sex'
@@ -65,6 +69,7 @@ function validateSex() {
         }
     }
 }
+//validate interest
 function validateInterest() {
     if (music.checked === false && sports.checked === false && games.checked === false && tech.checked === false) {
         errorInterest.innerHTML = 'Please select a topic'
@@ -87,6 +92,7 @@ function validateInterest() {
         }
     }
 }
+//validate country
 function validateCountry() {
     if (choose.selected === true) {
         errorSelect.innerHTML = 'Select your country'
@@ -108,6 +114,7 @@ function validateCountry() {
         }
     }
 }
+//validate area
 function validateArea() {
     if (area.value.length < 10 && area.value.length > 0) {
         console.log('Message too short')
@@ -120,6 +127,7 @@ function validateArea() {
         console.log('Message: ' + area.value)
     }
 }
+//clear console and execute validations
 function sendForm() {
     console.clear()
     validateName()
@@ -131,6 +139,7 @@ function sendForm() {
     validateCountry()
     validateArea()
 }
+//get elements by id to be used in javascript
 window.onload = function () {
     numbersTest = /^([1-9]?\d|100)$/;
     userName = document.getElementById('name')

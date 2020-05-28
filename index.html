@@ -12,27 +12,33 @@
     <body>
         <div class="container">
             <form class="form" autocomplete="off">
+                <!--title-->
                 <h1 class="title">COMPLETE THE FORM</h1>
+                <!--name-->
                 <div>
                     <label for="name">Name:</label>
                     <input id="name" placeholder="Enter your name" type="text">
                     <p id="errorName" class="error"></p>
                 </div>
+                <!--surname-->
                 <div>
                     <label for="surname">Surname:</label>
                     <input id="surname" placeholder="Enter your surname" type="text">
                     <p id="errorSurname" class="error"></p>
                 </div>
+                <!--email-->
                 <div>
                     <label for="email">Email:</label>
                     <input id="email" placeholder="example@hotmail.com" type="text">
                     <p id="errorEmail" class="error"></p>
                 </div>
+                <!--age-->
                 <div>
                     <label for="age">Age:</label>
                     <input id="age" placeholder="Enter your age" type="text">
                     <p id="errorAge" class="error"></p>
                 </div>
+                <!--sex radiobuttons-->
                 <div class="radio">
                     <label id="sex" class="labeltitle">Sex:</label>
                     <input type="radio" id="male" name="gender" value="male">
@@ -43,6 +49,7 @@
                     <label for="other">&nbspOther</label>
                     <p id="errorSex" class="error"></p>
                 </div>
+                <!--interest checkboxes-->
                 <div class="checkbox">
                     <label id="interest" class="labeltitle">Interest in:</label>
                     <input type="checkbox" class="custom-control-input" id="music" name="theme" value="music">
@@ -55,6 +62,7 @@
                     <label for="tech">&nbspTechnology</label>
                     <p id="errorInterest" class="error"></p>
                 </div>
+                <!--dropdown countries-->
                 <div>
                     <label for="countries">Select a country:</label>
                     <select name="contries" id="dropdown">
@@ -66,10 +74,12 @@
                     </select>
                     <p id="errorSelect" class="error"></p>
                 </div>
+                <!--textarea-->
                 <label for="send" class="footer">Send a message!</label>
                 <textarea id="area" class="area footer" name="textarea" placeholder="Write something here..." rows="10"
                     cols="47"></textarea>
                 <p id="errorArea" class="error"></p>
+                <!--button-->
                 <button id="send" class="button footer" type="button">Submit!</button>
             </form>
         </div>
