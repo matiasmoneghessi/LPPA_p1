@@ -1,91 +1,123 @@
+//validate name
 function validateName() {
-    if (username.value.length < 3 && username.value.length > 0) {
+    if (userName.value.length < 3 && userName.value.length > 0) {
         console.log('Name too short')
-        usernameerror.innerHTML = 'Name too short'
-    } else if (username.value.length === 0) {
+        userNameError.innerHTML = 'Name too short'
+    } else if (userName.value.length === 0) {
         console.log('Name empty')
-        usernameerror.innerHTML = 'Name empty'
+        userNameError.innerHTML = 'Name empty'
     } else {
-        console.log('Correct')
-        usernameerror.innerHTML = ''
+        userNameError.innerHTML = ''
+        console.log('Name: ' + userName.value)
     }
 }
 function validateSurname() {
-    if (usersurname.value.length < 3 && usersurname.value.length > 0) {
+    if (userSurname.value.length < 3 && userSurname.value.length > 0) {
         console.log('Surname too short')
-        usersurnameerror.innerHTML = 'Surname too short'
-    } else if (usersurname.value === "") {
+        userSurnameError.innerHTML = 'Surname too short'
+    } else if (userSurname.value === "") {
         console.log('Surname empty')
-        usersurnameerror.innerHTML = 'Surname empty'
+        userSurnameError.innerHTML = 'Surname empty'
     } else {
-        console.log('Correct')
-        usersurnameerror.innerHTML = ''
+        userSurnameError.innerHTML = ''
+        console.log('Surename: ' + userSurname.value)
     }
 }
 function validateEmail() {
-    if (reg.test(useremail.value) == false) {
+    if (reg.test(userEmail.value) == false) {
         console.log('Wrong email')
-        erroremail.innerHTML = 'Wrong email'
+        errorEmail.innerHTML = 'Wrong email'
     }
     else {
-        console.log('Correct email')
-        erroremail.innerHTML = ''
+        errorEmail.innerHTML = ''
+        console.log('Email: ' + userEmail.value)
     }
 }
 function validateAge() {
-    if (userage.value < 1 || userage.value > 99) {
+    if (userAge.value < 1 || userAge.value > 99) {
         console.log('The age must be a number between 1 and 100')
-        errorage.innerHTML = 'The age must be a number between 1 and 100'
+        errorAge.innerHTML = 'The age must be a number between 1 and 100'
     }
-    else if (!numbers_test.test(userage.value)) {
-        errorage.innerHTML = "Only numbers"
+    else if (!numbersTest.test(userAge.value)) {
+        errorAge.innerHTML = "Only numbers"
         console.log('Only numbers')
     }
     else {
-        console.log('Valid age')
-        errorage.innerHTML = ''
+        errorAge.innerHTML = ''
+        console.log('Age: ' + userAge.value)
     }
 }
 function validateSex() {
     if (male.checked === false && female.checked === false && other.checked === false) {
-        errorsex.innerHTML = 'Please select a sex'
+        errorSex.innerHTML = 'Please select a sex'
         console.log('Please select a sex')
     }
     else {
-        console.log('Sex selected')
-        errorsex.innerHTML = ''
+        errorSex.innerHTML = ''
+        if (male.checked === true) {
+            console.log('Sex: male')
+        }
+        else if (female.checked === true) {
+            console.log('Sex: female')
+        }
+        else {
+            console.log('Sex: other')
+        }
     }
 }
 function validateInterest() {
     if (music.checked === false && sports.checked === false && games.checked === false && tech.checked === false) {
-        errorinterest.innerHTML = 'Please select a topic'
+        errorInterest.innerHTML = 'Please select a topic'
         console.log('Please select a topic')
     }
     else {
-        console.log('Topic selected')
-        errorinterest.innerHTML = ''
+        errorInterest.innerHTML = ''
+        console.log('Topic: ')
+        if (music.checked === true) {
+            console.log('music')
+        }
+        if (sports.checked === true) {
+            console.log('sports')
+        }
+        if (games.checked === true) {
+            console.log('games')
+        }
+        if (tech.checked === true) {
+            console.log('tech')
+        }
     }
 }
 function validateCountry() {
     if (choose.selected === true) {
-        errorselect.innerHTML = 'Select your country'
+        errorSelect.innerHTML = 'Select your country'
         console.log('Select your country')
     }
     else {
-        console.log('Country selected')
-        errorselect.innerHTML = ''
+        errorSelect.innerHTML = ''
+        if (arg.selected === true) {
+            console.log('Country: Argentina')
+        }
+        if (chi.selected === true) {
+            console.log('Country: Chile')
+        }
+        if (bra.selected === true) {
+            console.log('Country: Brasil')
+        }
+        if (uru.selected === true) {
+            console.log('Country: Uruguay')
+        }
     }
 }
 function validateArea() {
     if (area.value.length < 10 && area.value.length > 0) {
         console.log('Message too short')
-        errorarea.innerHTML = 'Message too short'
+        errorArea.innerHTML = 'Message too short'
     } else if (area.value.length === 0) {
         console.log('Message empty')
-        errorarea.innerHTML = 'Message empty'
+        errorArea.innerHTML = 'Message empty'
     } else {
-        console.log('Correct')
-        errorarea.innerHTML = ''
+        errorArea.innerHTML = ''
+        console.log('Message: ' + area.value)
     }
 }
 function sendForm() {
@@ -98,37 +130,36 @@ function sendForm() {
     validateInterest()
     validateCountry()
     validateArea()
-    //console.log(userage)
 }
 window.onload = function () {
-    numbers_test = /^([1-9]?\d|100)$/;
-    username = document.getElementById('name')
-    usernameerror = document.getElementById('errorname')
-    usersurname = document.getElementById('surname')
-    usersurnameerror = document.getElementById('errorsurname')
-    useremail = document.getElementById('email')
+    numbersTest = /^([1-9]?\d|100)$/;
+    userName = document.getElementById('name')
+    userNameError = document.getElementById('errorName')
+    userSurname = document.getElementById('surname')
+    userSurnameError = document.getElementById('errorSurname')
+    userEmail = document.getElementById('email')
     reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
-    erroremail = document.getElementById('erroremail')
-    userage = document.getElementById('age')
-    errorage = document.getElementById('errorage')
+    errorEmail = document.getElementById('errorEmail')
+    userAge = document.getElementById('age')
+    errorAge = document.getElementById('errorAge')
     male = document.getElementById('male')
     female = document.getElementById('female')
     other = document.getElementById('other')
-    errorsex = document.getElementById('errorsex')
+    errorSex = document.getElementById('errorSex')
     music = document.getElementById('music')
     sports = document.getElementById('sports')
     games = document.getElementById('games')
     tech = document.getElementById('tech')
-    errorinterest = document.getElementById('errorinterest')
+    errorInterest = document.getElementById('errorInterest')
     dropdown = document.getElementById('dropdown')
     choose = document.getElementById('select')
     arg = document.getElementById('arg')
     chi = document.getElementById('chi')
     bra = document.getElementById('bra')
     uru = document.getElementById('uru')
-    errorselect = document.getElementById('errorselect')
+    errorSelect = document.getElementById('errorSelect')
     area = document.getElementById('area')
-    errorarea = document.getElementById('errorarea')
-    sendbutton = document.getElementById('send')
-    sendbutton.onclick = sendForm
+    errorArea = document.getElementById('errorArea')
+    sendButton = document.getElementById('send')
+    sendButton.onclick = sendForm
 }
